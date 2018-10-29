@@ -5,13 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:columnCount="4">
+    android:layout_gravity="center_vertical"
+    android:columnCount="4"
+    android:layout_marginStart="5sp"
+    android:layout_marginEnd="5sp"
+    >
 <TextView android:id="@+id/tvResult"
  android:layout_columnSpan="4"
     android:layout_width="match_parent"
     android:layout_height="50dp"
-    android:layout_marginLeft="20dp"
-    android:layout_marginRight="20dp"
+    android:textSize="40dp"
+    android:textDirection="anyRtl"
+    android:gravity="right"
     android:background="#000000"
     android:textColor="#fff"
     android:layout_marginTop="5dp"
@@ -24,6 +29,7 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+
         android:layout_columnSpan="4">
 
         <RadioButton
@@ -89,9 +95,10 @@
     </RadioGroup>
 
     <Button
+       android:layout_width="160sp"
         style="@style/margin_button"
         android:id="@+id/btEffacer"
-        android:layout_columnWeight="2"
+
         android:layout_columnSpan="3"
         android:text="EFFACER"        />
 
@@ -107,6 +114,7 @@
         style="@style/margin_button"
         android:text="8"/>
     <Button android:id="@+id/btNeuf"
+
         style="@style/margin_button"
         android:text="9"/>
     <Button android:id="@+id/btBy"
@@ -153,8 +161,7 @@
         android:text="."/>
     <Button
         style="@style/button_ope"
-        android:id="@+id/btEgal"
-        android:layout_columnWeight="2"
+        android:layout_width="160sp"
         android:layout_columnSpan="2"
         android:text="RESULTAT"        />
 
