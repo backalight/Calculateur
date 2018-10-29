@@ -4,196 +4,236 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
     android:layout_gravity="center_vertical"
+
     android:columnCount="4"
-    android:layout_marginStart="5sp"
-    android:layout_marginEnd="5sp"
+    tools:context=".MainActivity"
     >
-<TextView android:id="@+id/tvResult"
- android:layout_columnSpan="4"
-    android:layout_width="match_parent"
-    android:layout_height="50dp"
-    android:textSize="40dp"
-    android:textDirection="anyRtl"
-    android:gravity="right"
-    android:background="#000000"
-    android:textColor="#fff"
-    android:layout_marginTop="5dp"
-    android:layout_marginBottom="15dp"
-    />
+
+    <TextView
+        android:id="@+id/tvResult"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_columnSpan="4"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="15dp"
+        android:background="#000000"
+        android:gravity="right"
+        android:textColor="#fff"
+
+        android:textDirection="anyRtl"
+        android:textSize="40dp"
+        tools:layout_marginLeft="0dp"
+        tools:layout_marginStart="0dp" />
 
     <RadioGroup
-        android:layout_marginBottom="15dp"
-        android:layout_marginLeft="30dp"
-        android:orientation="horizontal"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_columnSpan="4"
+        android:layout_marginLeft="30dp"
+        android:layout_marginBottom="15dp"
 
-        android:layout_columnSpan="4">
+        android:orientation="horizontal">
 
         <RadioButton
-            android:checked="true"
-        android:onClick="convEuro"
-            style="@style/RadioButton"
             android:id="@+id/rbEuro"
+            style="@style/RadioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:checked="true"
+            android:onClick="convEuro"
 
             android:text="€" />
 
         <RadioButton
-            style="@style/RadioButton"
-            android:onClick="convDollar"
             android:id="@+id/rbdollar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="$" />
-        <RadioButton
             style="@style/RadioButton"
-            android:onClick="convLivres"
-            android:id="@+id/rbLivre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="convDollar"
+            android:text="$" />
+
+        <RadioButton
+            android:id="@+id/rbLivre"
+            style="@style/RadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="convLivres"
             android:text="£" />
 
         <RadioButton
-            style="@style/RadioButton"
-            android:onClick="convBitcoin"
             android:id="@+id/rbBitcoin"
+            style="@style/RadioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="convBitcoin"
             android:text="ß" />
     </RadioGroup>
+
     <RadioGroup
-        android:layout_marginBottom="30dp"
-        android:layout_marginLeft="30dp"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_columnSpan="4">
-        <RadioButton
-            style="@style/RadioButton"
+        android:layout_columnSpan="4"
+        android:layout_marginLeft="30dp"
+        android:layout_marginBottom="30dp"
+        android:orientation="horizontal">
 
+        <RadioButton
             android:id="@+id/rbDeg"
+            style="@style/RadioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="toDeg"
             android:text="deg." />
-        <RadioButton
-            style="@style/RadioButton"
 
+        <RadioButton
             android:id="@+id/rbRad"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="rad." />
-        <RadioButton
             style="@style/RadioButton"
-
-            android:id="@+id/rbGrd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="grd." />
+            android:onClick="toRad"
+            android:text="rad." />
+
+        <RadioButton
+            android:id="@+id/rbGrd"
+            style="@style/RadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="toGrade"
+            android:text="@string/grd" />
 
     </RadioGroup>
 
     <Button
-       android:layout_width="160sp"
-        style="@style/margin_button"
         android:id="@+id/btEffacer"
-        android:onClick="clear"
+        style="@style/margin_button"
+        android:layout_width="160sp"
         android:layout_columnSpan="3"
-        android:text="EFFACER"        />
+        android:onClick="clear"
+        android:text="@string/effacer"
+        tools:layout_marginStart="25dp" />
 
-    <Button android:id="@+id/bTdiviser"
-        style="@style/button_ope"
+    <Button
+        android:id="@+id/bTdiviser"
+        style="@style/margin_button"
         android:onClick="getValue"
-        android:text="/"
+        android:text="@string/div"
 
         />
-    <Button android:id="@+id/btSept"
-        style="@style/margin_button"
-        android:onClick="getValue"
-        android:text="7"/>
-    <Button android:id="@+id/btHuit"
-        android:onClick="getValue"
 
-        style="@style/margin_button"
-        android:text="8"/>
-    <Button android:id="@+id/btNeuf"
-        android:onClick="getValue"
-
-        style="@style/margin_button"
-        android:text="9"/>
-    <Button android:id="@+id/btBy"
-
-        style="@style/button_ope"
-        android:onClick="getValue"
-
-        android:text="*"/>
-    />
-    <Button android:id="@+id/btQuatre"
-        style="@style/margin_button"
-        android:onClick="getValue"
-
-        android:text="4"/>
-    <Button android:id="@+id/btCinq"
-        android:onClick="getValue"
-        style="@style/margin_button"
-        android:text="5"/>
-    <Button android:id="@+id/btSix"
-        android:onClick="getValue"
-
-        style="@style/margin_button"
-        android:text="6"/>
-    <Button android:id="@+id/btMinus"
-        android:onClick="getValue"
-
-        style="@style/button_ope"
-
-        android:text="-"/>
-    />
-    <Button android:id="@+id/btUn"
-        style="@style/margin_button"
-        android:onClick="getValue"
-
-        android:text="1"/>
-    <Button android:id="@+id/btDeux"
-        android:onClick="getValue"
-
-        style="@style/margin_button"
-        android:text="2"/>
-    <Button android:id="@+id/btTrois"
-        android:onClick="getValue"
-
-        style="@style/margin_button"
-        android:text="3"/>
-    <Button android:id="@+id/btAdd"
-        android:onClick="getValue"
-
-        style="@style/button_ope"
-
-        android:text="+"/>
-    />
-    <Button android:id="@+id/btZero"
-        android:onClick="getValue"
-
-        style="@style/margin_button"
-        android:text="0"/>
-    <Button android:id="@+id/btDot"
-        android:onClick="getValue"
-
-        style="@style/margin_button"
-        android:text="."/>
     <Button
-        style="@style/button_ope"
+        android:id="@+id/btSept"
+        style="@style/margin_button"
+        android:onClick="getValue"
+        android:text="@string/_7"
+        tools:layout_marginStart="25dp" />
+
+    <Button
+        android:id="@+id/btHuit"
+        style="@style/margin_button"
+
+        android:onClick="getValue"
+        android:text="@string/_8" />
+
+    <Button
+        android:id="@+id/btNeuf"
+        style="@style/margin_button"
+
+        android:onClick="getValue"
+        android:text="@string/_9" />
+
+    <Button
+        android:id="@+id/btBy"
+
+        style="@style/margin_button"
+        android:onClick="getValue"
+
+        android:text="@string/by" />
+    />
+
+    <Button
+        android:id="@+id/btQuatre"
+        style="@style/margin_button"
+        android:onClick="getValue"
+
+        android:text="@string/_4"
+        tools:layout_marginStart="25dp" />
+
+    <Button
+        android:id="@+id/btCinq"
+        style="@style/margin_button"
+        android:onClick="getValue"
+        android:text="@string/_5" />
+
+    <Button
+        android:id="@+id/btSix"
+        style="@style/margin_button"
+
+        android:onClick="getValue"
+        android:text="@string/_6" />
+
+    <Button
+        android:id="@+id/btMinus"
+        style="@style/margin_button"
+
+        android:onClick="getValue"
+
+        android:text="@string/minus" />
+    />
+
+    <Button
+        android:id="@+id/btUn"
+        style="@style/margin_button"
+        android:onClick="getValue"
+
+        android:text="@string/_1"
+        tools:layout_marginStart="25dp" />
+
+    <Button
+        android:id="@+id/btDeux"
+        style="@style/margin_button"
+
+        android:onClick="getValue"
+        android:text="@string/_2" />
+
+    <Button
+        android:id="@+id/btTrois"
+        style="@style/margin_button"
+
+        android:onClick="getValue"
+        android:text="@string/_3" />
+
+    <Button
+        android:id="@+id/btAdd"
+        style="@style/margin_button"
+
+        android:onClick="getValue"
+
+        android:text="@string/plus" />
+    />
+
+    <Button
+        android:id="@+id/btZero"
+        style="@style/margin_button"
+
+        android:onClick="getValue"
+        android:text="@string/_0"
+        tools:layout_marginStart="25dp" />
+
+    <Button
+        android:id="@+id/btDot"
+        style="@style/margin_button"
+
+        android:onClick="getValue"
+        android:text="@string/dot" />
+
+    <Button
+        style="@style/margin_button"
         android:layout_width="160sp"
         android:layout_columnSpan="2"
-        android:text="RESULTAT"
         android:onClick="result"
-        />
-
-
-
+        android:text="@string/result" />
 
 
 </GridLayout>

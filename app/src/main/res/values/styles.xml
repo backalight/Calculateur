@@ -16,15 +16,12 @@
     </style>
     <style name="margin_button">
 
-
-    </style>
-    <style name="button_ope">
-    <item name="android:background">#767070</item>
-        <item name="android:layout_marginEnd">20dp</item>
-
-        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginEnd">5sp</item>
+        <item name="android:layout_marginTop">5sp
+        </item>
 
 
     </style>
+
 
 </resources>
